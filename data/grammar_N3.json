@@ -1,0 +1,132 @@
+[
+  {
+    "pattern": "〜ようです",
+    "meaning": "好像〜（客觀推測）",
+    "formation": "Plain / Noun の + ようです",
+    "explanation": "根據客觀情況或直接觀察作出推測，比みたいです更書面正式。常用於描述外觀、樣子或狀態的判斷。",
+    "examples": [
+      { "jp": "彼は忙しいようです。", "romaji": "Kare wa isogashii you desu.", "zh": "他好像很忙。" },
+      { "jp": "雨が降ったようです。", "romaji": "Ame ga futta you desu.", "zh": "好像下過雨了。" }
+    ]
+  },
+  {
+    "pattern": "〜らしいです",
+    "meaning": "聽說〜（傳聞）",
+    "formation": "Plain + らしいです",
+    "explanation": "從外部資訊（傳聞、新聞等）推測，帶有傳聞語氣，表示「據說〜」。也可以表示「很有〜的樣子」（典型性）。",
+    "examples": [
+      { "jp": "彼女は結婚するらしいです。", "romaji": "Kanojo wa kekkon suru rashii desu.", "zh": "聽說她要結婚了。" },
+      { "jp": "明日は台風らしいです。", "romaji": "Ashita wa taifuu rashii desu.", "zh": "聽說明天有颱風。" }
+    ]
+  },
+  {
+    "pattern": "〜はずです",
+    "meaning": "應該〜（理所當然）",
+    "formation": "Plain + はずです",
+    "explanation": "基於邏輯常理的推測，說話者有根據認為某事應該如此。帶有一定確信度，比かもしれません確定性高。",
+    "examples": [
+      { "jp": "彼はもう来るはずです。", "romaji": "Kare wa mou kuru hazu desu.", "zh": "他應該快來了。" },
+      { "jp": "彼女はこのことを知っているはずです。", "romaji": "Kanojo wa kono koto o shitte iru hazu desu.", "zh": "她應該知道這件事。" }
+    ]
+  },
+  {
+    "pattern": "〜かもしれません",
+    "meaning": "也許〜（不確定）",
+    "formation": "Plain + かもしれません",
+    "explanation": "不確定的可能性，比でしょう確定性低，表示「也許〜，說不定〜」。口語縮約形為〜かもしれない或〜かも。",
+    "examples": [
+      { "jp": "明日は雨かもしれません。", "romaji": "Ashita wa ame kamo shiremasen.", "zh": "明天也許會下雨。" },
+      { "jp": "彼は忘れたかもしれません。", "romaji": "Kare wa wasureta kamo shiremasen.", "zh": "他也許忘記了。" }
+    ]
+  },
+  {
+    "pattern": "〜ばかりです",
+    "meaning": "剛做完〜",
+    "formation": "Verb-ta + ばかりです",
+    "explanation": "強調時間的剛完成性，動作剛發生不久。也可以表示「只做〜」（接辞書形），意思不同，需注意區別。",
+    "examples": [
+      { "jp": "日本に来たばかりです。", "romaji": "Nihon ni kita bakari desu.", "zh": "我剛來日本。" },
+      { "jp": "昼ご飯を食べたばかりです。", "romaji": "Hirugohan o tabeta bakari desu.", "zh": "我剛吃完午飯。" }
+    ]
+  },
+  {
+    "pattern": "〜だけでなく〜も",
+    "meaning": "不只〜，連〜也",
+    "formation": "Noun / Plain + だけでなく + も",
+    "explanation": "不僅如此，還有其他，類似中文「不只〜，也〜」。強調範圍的擴大，前後兩件事都成立。",
+    "examples": [
+      { "jp": "英語だけでなく、日本語も話せます。", "romaji": "Eigo dake de naku, Nihongo mo hanasemasu.", "zh": "不只英語，連日語也會說。" },
+      { "jp": "体だけでなく、心も大切です。", "romaji": "Karada dake de naku, kokoro mo taisetsu desu.", "zh": "不只身體，心靈也很重要。" }
+    ]
+  },
+  {
+    "pattern": "〜によって",
+    "meaning": "依〜而定 / 由於〜",
+    "formation": "Noun + によって",
+    "explanation": "根據某條件結果不同，也表手段、原因或動作主體（被動句中）。用法多樣，需根據上下文判斷。",
+    "examples": [
+      { "jp": "人によって意見が違います。", "romaji": "Hito ni yotte iken ga chigaimasu.", "zh": "因人而異，意見不同。" },
+      { "jp": "地震によって建物が壊れました。", "romaji": "Jishin ni yotte tatemono ga kowaremashita.", "zh": "因地震建築物倒塌了。" }
+    ]
+  },
+  {
+    "pattern": "〜に対して",
+    "meaning": "對〜、針對〜",
+    "formation": "Noun + に対して",
+    "explanation": "表示對象或對比。對某人的態度或行為時使用，也表示前後兩件事的對比關係（「對〜而言」）。",
+    "examples": [
+      { "jp": "先生の質問に対して答えます。", "romaji": "Sensei no shitsumon ni taishite kotaemasu.", "zh": "回答老師的問題。" },
+      { "jp": "日本語は難しいのに対して、英語は比較的簡単です。", "romaji": "Nihongo wa muzukashii no ni taishite, Eigo wa hikakuteki kantan desu.", "zh": "日語很難，相對地英語比較簡單。" }
+    ]
+  },
+  {
+    "pattern": "〜を通じて／を通して",
+    "meaning": "透過〜、藉由〜",
+    "formation": "Noun + を通じて / を通して",
+    "explanation": "表示媒介手段或過程，「透過〜管道」或「透過〜經歷」。を通じて偏向整體期間或媒介，を通して偏向具體手段或過程，兩者多可替換。",
+    "examples": [
+      { "jp": "インターネットを通じて友達ができました。", "romaji": "Intaanetto o tsuujite tomodachi ga dekimashita.", "zh": "透過網路交到了朋友。" },
+      { "jp": "経験を通して学びます。", "romaji": "Keiken o tooshite manabimasu.", "zh": "透過經驗來學習。" }
+    ]
+  },
+  {
+    "pattern": "〜ても",
+    "meaning": "即使〜也〜",
+    "formation": "Verb-te form / Adj + ても",
+    "explanation": "表示讓步，「即使〜，也〜」。不論前件條件如何，後件結果不變。い形容詞去い加くても，な形容詞加でも，名詞加でも。",
+    "examples": [
+      { "jp": "雨が降っても、試合をします。", "romaji": "Ame ga futte mo, shiai o shimasu.", "zh": "即使下雨，也要比賽。" },
+      { "jp": "高くても、買います。", "romaji": "Takakute mo, kaimasu.", "zh": "即使很貴，也要買。" }
+    ]
+  },
+  {
+    "pattern": "〜わけです",
+    "meaning": "難怪〜 / 也就是說〜",
+    "formation": "Plain + わけです",
+    "explanation": "表示從已知情報得出理所當然的結論，「難怪〜」「所以才〜」。也用於解釋說明（「也就是說」）。わけではありません則表示否定，「並不是〜」。",
+    "examples": [
+      { "jp": "毎日練習していたから、上手なわけです。", "romaji": "Mainichi renshuu shite ita kara, jouzu na wake desu.", "zh": "因為每天練習，所以難怪這麼厲害。" },
+      { "jp": "つまり、彼は来ないわけですね。", "romaji": "Tsumari, kare wa konai wake desu ne.", "zh": "也就是說，他不會來了對吧。" }
+    ]
+  },
+  {
+    "pattern": "〜に違いない",
+    "meaning": "一定是〜（強烈確信）",
+    "formation": "Plain + に違いない",
+    "explanation": "表示說話者的強烈確信，「一定是〜」「肯定是〜」。比はずだ確定性更高，語氣更強烈，帶有主觀判斷色彩。",
+    "examples": [
+      { "jp": "あんなに練習したから、合格するに違いない。", "romaji": "Anna ni renshuu shita kara, goukaku suru ni chigainai.", "zh": "練習了那麼多，一定能合格的。" },
+      { "jp": "あの光は飛行機に違いない。", "romaji": "Ano hikari wa hikouki ni chigainai.", "zh": "那個光一定是飛機。" }
+    ]
+  },
+  {
+    "pattern": "〜ことにする",
+    "meaning": "決定做〜",
+    "formation": "Verb-dict / Verb-nai + ことにする",
+    "explanation": "表示說話者自己做出的決定，「決定〜」。強調主動的意志決定。〜ことになる則表示外部安排造成的結果（「決定了〜」，非自己主動）。",
+    "examples": [
+      { "jp": "来年、日本に留学することにしました。", "romaji": "Rainen, Nihon ni ryuugaku suru koto ni shimashita.", "zh": "決定明年去日本留學。" },
+      { "jp": "お酒を飲まないことにします。", "romaji": "Osake o nomanai koto ni shimasu.", "zh": "決定不喝酒。" }
+    ]
+  }
+]

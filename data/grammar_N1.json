@@ -1,0 +1,102 @@
+[
+  {
+    "pattern": "〜いかんによらず",
+    "meaning": "不論〜如何 / 無論〜怎樣",
+    "formation": "Noun + いかんによらず / いかんにかかわらず",
+    "explanation": "表示不論某事物的狀況如何，結果都不受其影響，「無論〜如何都〜」。いかん意為「如何」，是文語詞彙，多用於書面語、法規條文、正式聲明中。",
+    "examples": [
+      { "jp": "理由のいかんによらず、遅刻は認められない。", "romaji": "Riyuu no ikan ni yorazu, chikoku wa mitomerarenai.", "zh": "無論理由如何，遲到都不被允許。" },
+      { "jp": "結果のいかんにかかわらず、全力を尽くす。", "romaji": "Kekka no ikan ni kakawarazu, zenryoku o tsukusu.", "zh": "不論結果如何，都要全力以赴。" }
+    ]
+  },
+  {
+    "pattern": "〜ならでは",
+    "meaning": "唯有〜才有的 / 〜獨特的",
+    "formation": "Noun + ならでは（の + Noun）",
+    "explanation": "表示只有該事物才有的特質或做法，「唯有〜才有的〜」。帶有讚賞、珍視的語氣，強調獨特性和排他性。常接の修飾後面的名詞，如「日本ならではの文化」。",
+    "examples": [
+      { "jp": "これは京都ならではの風景です。", "romaji": "Kore wa Kyoto nara dewa no fuukei desu.", "zh": "這是唯有京都才有的風景。" },
+      { "jp": "職人ならではの技が光る作品だ。", "romaji": "Shokunin nara dewa no waza ga hikaru sakuhin da.", "zh": "這是件閃耀著唯有工匠才有技藝的作品。" }
+    ]
+  },
+  {
+    "pattern": "〜べく",
+    "meaning": "為了〜 / 應當〜（文語目的）",
+    "formation": "Verb-dict + べく（する→すべく）",
+    "explanation": "文語的目的表現，相當於〜ために（目的）或〜しようとして，帶有強烈的意志或義務感。多用於書面語、文學作品或正式文章。べく前的動詞須用終止形，する変格為すべく。",
+    "examples": [
+      { "jp": "夢を実現すべく、毎日努力を重ねた。", "romaji": "Yume o jitsugen subeku, mainichi doryoku o kasaneta.", "zh": "為了實現夢想，每天不斷努力。" },
+      { "jp": "問題を解決すべく、専門家を招集した。", "romaji": "Mondai o kaiketsu subeku, senmonka o shoushuu shita.", "zh": "為了解決問題，召集了專家。" }
+    ]
+  },
+  {
+    "pattern": "〜をもって",
+    "meaning": "以〜 / 憑藉〜 / 截至〜",
+    "formation": "Noun + をもって",
+    "explanation": "有多種用法：①表示手段或方法「以〜來〜」（書面語的で）；②表示期限「截至〜為止」，常見於通知、公告。語感正式莊重，日常對話少用。",
+    "examples": [
+      { "jp": "これをもって、本日の会議を終了します。", "romaji": "Kore o motte, honjitsu no kaigi o shuuryou shimasu.", "zh": "以此宣告今日會議結束。" },
+      { "jp": "実力をもって証明してみせる。", "romaji": "Jitsuryoku o motte shoumei shite miseru.", "zh": "要憑真實力來證明。" }
+    ]
+  },
+  {
+    "pattern": "〜にたえない",
+    "meaning": "不堪〜 / 令人難以忍受〜",
+    "formation": "Verb-dict / Noun + にたえない",
+    "explanation": "有兩種相反用法：①「〜にたえない」表示負面，「令人難以忍受、不堪入目」（如：聞くにたえない）；②「〜にたえる」表示正面，「值得〜、經得起〜」（如：鑑賞にたえる）。需根據前接詞判斷意思。",
+    "examples": [
+      { "jp": "この映像は見るにたえない。", "romaji": "Kono eizou wa miru ni taenai.", "zh": "這個影像令人慘不忍睹。" },
+      { "jp": "感謝の念にたえません。", "romaji": "Kansha no nen ni taemasen.", "zh": "感激不盡。（充滿感謝之情）" }
+    ]
+  },
+  {
+    "pattern": "〜に即して",
+    "meaning": "依照〜 / 符合〜",
+    "formation": "Noun + に即して / に即した + Noun",
+    "explanation": "表示嚴格依據某基準、實際情況或規定來行動，「依照〜」「符合〜實際地」。強調緊密遵循而非一般性依據，比〜に従って更貼近實際情況。",
+    "examples": [
+      { "jp": "現実に即して考える必要があります。", "romaji": "Genjitsu ni sokushite kangaeru hitsuyou ga arimasu.", "zh": "有必要依照現實情況來思考。" },
+      { "jp": "法律に即した対応を心がけてください。", "romaji": "Houritsu ni soku shita taiou o kokorogakete kudasai.", "zh": "請注意採取符合法律規定的應對方式。" }
+    ]
+  },
+  {
+    "pattern": "〜まじき",
+    "meaning": "不應有的〜 / 不該做的〜",
+    "formation": "Verb-dict + まじき + Noun（する→すまじき / するまじき）",
+    "explanation": "文語的否定義務表現，「不應該〜的〜」，表示強烈的道德譴責或規範要求。多用於表達對嚴重失格行為的批判，常見搭配如「あるまじき行為」「許すまじき犯罪」。",
+    "examples": [
+      { "jp": "これは医師としてあるまじき行為だ。", "romaji": "Kore wa ishi to shite aru majiki koui da.", "zh": "這是身為醫生不應有的行為。" },
+      { "jp": "教育者にあるまじき言動は許されない。", "romaji": "Kyouikusha ni aru majiki gendou wa yurusarenai.", "zh": "身為教育者不應有的言行是不被允許的。" }
+    ]
+  },
+  {
+    "pattern": "〜いかんせん",
+    "meaning": "無奈〜 / 可惜〜（感嘆無能為力）",
+    "formation": "いかんせん + 述語（獨立使用或接続）",
+    "explanation": "表示雖然心有意願，但因為某種客觀因素而無能為力的遺憾感，「無奈〜」「可惜〜」。是文語副詞，帶有強烈的惋惜語氣，常用於書面語或正式演說。",
+    "examples": [
+      { "jp": "実力はあるが、いかんせん経験が足りない。", "romaji": "Jitsuryoku wa aru ga, ikanzen keiken ga tarinai.", "zh": "雖然有實力，可惜經驗不足。" },
+      { "jp": "助けたい気持ちはあるが、いかんせん予算がない。", "romaji": "Tasuketai kimochi wa aru ga, ikanzen yosan ga nai.", "zh": "雖然想幫忙，無奈預算不足。" }
+    ]
+  },
+  {
+    "pattern": "〜をもってすれば",
+    "meaning": "若憑藉〜的話 / 以〜的能力來說",
+    "formation": "Noun + をもってすれば",
+    "explanation": "表示若憑藉某人的能力、才能或某事物的特性，某件事就能夠實現，「以〜之力的話〜」。帶有對能力的讚賞或高度評價的語氣，常用於正式場合或文章中。",
+    "examples": [
+      { "jp": "彼の技術をもってすれば、この問題は必ず解決できる。", "romaji": "Kare no gijutsu o motte sureba, kono mondai wa kanarazu kaiketsu dekiru.", "zh": "若憑藉他的技術，這個問題一定能解決。" },
+      { "jp": "現代の医学をもってすれば、その病気は治療可能です。", "romaji": "Gendai no igaku o motte sureba, sono byouki wa chiryou kanou desu.", "zh": "以現代醫學的能力，那個病是可以治療的。" }
+    ]
+  },
+  {
+    "pattern": "〜ともなると",
+    "meaning": "一旦到了〜（的地位、程度）",
+    "formation": "Noun + ともなると / ともなれば",
+    "explanation": "表示一旦達到某種地位、年齡、程度，就會有相應的特殊狀況或責任，「一旦到了〜的地步就〜」。帶有「達到某水準後自然會有相應變化」的含意，常用於說明身分、地位帶來的責任。",
+    "examples": [
+      { "jp": "部長ともなると、責任も大きくなります。", "romaji": "Buchou to mo naru to, sekinin mo ookiku narimasu.", "zh": "一旦到了部長的位置，責任也隨之增大。" },
+      { "jp": "有名人ともなれば、プライバシーの確保が難しくなる。", "romaji": "Yuumeijin to mo nareba, puraibashii no kakuho ga muzukashiku naru.", "zh": "一旦成為名人，保護隱私就變得困難了。" }
+    ]
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "pattern": "〜ざるを得ない",
+    "meaning": "不得不〜",
+    "formation": "Verb-nai stem + ざるを得ない（する→せざるを得ない）",
+    "explanation": "表示迫於情勢或外部壓力而不得不做某事，帶有無奈或被迫的語氣。比〜なければならない更書面、更強調無奈感。する的否定詞幹為せ，故為せざるを得ない。",
+    "examples": [
+      { "jp": "体調が悪いので、大会を棄権せざるを得ない。", "romaji": "Taicho ga warui node, taikai o jikkensen o ezarou o enai.", "zh": "因為身體不舒服，不得不棄賽。" },
+      { "jp": "証拠がそろっているので、認めざるを得ない。", "romaji": "Shouko ga sorotte iru node, mitomezaru o enai.", "zh": "證據確鑿，不得不承認。" }
+    ]
+  },
+  {
+    "pattern": "〜につれて",
+    "meaning": "隨著〜",
+    "formation": "Verb-dict / Noun + につれて",
+    "explanation": "表示隨著前件的變化，後件也跟著同步變化，「隨著〜也〜」。前後兩個變化方向通常一致。常用於描述時間推移或程度增加帶來的連動變化。",
+    "examples": [
+      { "jp": "年をとるにつれて、体力が落ちてきます。", "romaji": "Toshi o toru ni tsurete, tairyoku ga ochite kimasu.", "zh": "隨著年齡增長，體力也逐漸下降。" },
+      { "jp": "経済が発展するにつれて、生活が豊かになりました。", "romaji": "Keizai ga hatten suru ni tsurete, seikatsu ga yutaka ni narimashita.", "zh": "隨著經濟發展，生活變得富裕了。" }
+    ]
+  },
+  {
+    "pattern": "〜にもかかわらず",
+    "meaning": "儘管〜卻〜",
+    "formation": "Noun / Plain + にもかかわらず",
+    "explanation": "表示逆接，儘管有前件的情況，後件卻發生了與預期相反的事。比〜のに語氣更書面正式，多用於文章或正式場合。",
+    "examples": [
+      { "jp": "大雨にもかかわらず、試合は続けられた。", "romaji": "Oame ni mo kakawarazu, shiai wa tsuzukerareta.", "zh": "儘管大雨，比賽仍繼續進行。" },
+      { "jp": "努力したにもかかわらず、試験に落ちてしまった。", "romaji": "Doryoku shita ni mo kakawarazu, shiken ni ochite shimatta.", "zh": "儘管努力了，考試還是落榜了。" }
+    ]
+  },
+  {
+    "pattern": "〜をはじめ（として）",
+    "meaning": "以〜為首 / 以〜為代表",
+    "formation": "Noun + をはじめ（として）",
+    "explanation": "列舉時以最具代表性的事物為首，再提及其他同類事物，「以〜為代表，還有〜」。強調所列舉對象的典型性。",
+    "examples": [
+      { "jp": "東京をはじめ、大阪や名古屋でも講演を行います。", "romaji": "Tokyo o hajime, Osaka ya Nagoya demo kouzen o okonaimasu.", "zh": "以東京為首，也在大阪和名古屋舉辦演講。" },
+      { "jp": "社長をはじめとして、全員が参加しました。", "romaji": "Shachou o hajime to shite, zen'in ga sanka shimashita.", "zh": "以社長為首，全員都參加了。" }
+    ]
+  },
+  {
+    "pattern": "〜に反して",
+    "meaning": "與〜相反 / 違背〜",
+    "formation": "Noun + に反して",
+    "explanation": "表示結果或行動與某期待、規定、預想相反，「違背〜」「與〜相反」。常用於正式文章或描述意外的結果。",
+    "examples": [
+      { "jp": "予想に反して、試験は簡単でした。", "romaji": "Yosou ni hanshite, shiken wa kantan deshita.", "zh": "與預期相反，考試很簡單。" },
+      { "jp": "親の期待に反して、彼は会社を辞めてしまった。", "romaji": "Oya no kitai ni hanshite, kare wa kaisha o yamete shimatta.", "zh": "違背父母的期望，他辭掉了工作。" }
+    ]
+  },
+  {
+    "pattern": "〜に伴って",
+    "meaning": "伴隨〜 / 隨著〜",
+    "formation": "Verb-dict / Noun + に伴って",
+    "explanation": "表示隨著某事的發生，另一件事也跟著發生或變化，「伴隨〜而〜」。與につれて相似，但に伴って更強調因果關聯性，常用於正式場合。",
+    "examples": [
+      { "jp": "人口増加に伴って、住宅問題が深刻になっています。", "romaji": "Jinkou zouka ni tomonatte, juutaku mondai ga shinkoku ni natte imasu.", "zh": "隨著人口增加，住宅問題日益嚴重。" },
+      { "jp": "技術の発展に伴い、生活が便利になった。", "romaji": "Gijutsu no hatten ni tomonai, seikatsu ga benri ni natta.", "zh": "伴隨技術發展，生活變得方便了。" }
+    ]
+  },
+  {
+    "pattern": "〜からこそ",
+    "meaning": "正因為〜 / 就是因為〜",
+    "formation": "Plain + からこそ",
+    "explanation": "強調原因，「正是因為〜，所以才〜」。こそ有強調作用，表達說話者認為這個理由是最關鍵的根據。",
+    "examples": [
+      { "jp": "苦労したからこそ、成功の喜びが大きい。", "romaji": "Kurou shita kara koso, seikou no yorokobi ga ookii.", "zh": "正因為吃過苦，成功的喜悅才更大。" },
+      { "jp": "好きだからこそ、厳しいことを言うのです。", "romaji": "Suki dakara koso, kibishii koto o iu no desu.", "zh": "正因為喜歡，才會說嚴厲的話。" }
+    ]
+  },
+  {
+    "pattern": "〜さえ〜ば",
+    "meaning": "只要〜就〜",
+    "formation": "Noun + さえ + Verb-ba form / Adj-ba form",
+    "explanation": "表示條件，「只要具備〜這個最低條件，就能〜」。さえ強調該條件是唯一必要的，其他都不重要。動詞用ば形，い形容詞用ければ，名詞接さえあれば。",
+    "examples": [
+      { "jp": "健康でさえあれば、何でもできる。", "romaji": "Kenkou de sae areba, nandemo dekiru.", "zh": "只要健康，什麼都能做。" },
+      { "jp": "お金さえあれば、問題は解決できます。", "romaji": "Okane sae areba, mondai wa kaiketsu dekimasu.", "zh": "只要有錢，問題就能解決。" }
+    ]
+  },
+  {
+    "pattern": "〜に先立って",
+    "meaning": "在〜之前（事前）",
+    "formation": "Noun / Verb-dict + に先立って",
+    "explanation": "表示在某重要事項發生之前，事先做某事。帶有正式、慎重的語感，多用於儀式、重要活動前的準備或說明。比〜の前に更正式書面。",
+    "examples": [
+      { "jp": "式典に先立って、会場の準備を行います。", "romaji": "Shikiten ni sakidatte, kaijou no junbi o okonaimasu.", "zh": "在典禮之前，先進行會場準備。" },
+      { "jp": "発売に先立ち、プレスリリースを配布しました。", "romaji": "Hatsubai ni sakidachi, puresu riisusu o haifu shimashita.", "zh": "在發售之前，發布了新聞稿。" }
+    ]
+  },
+  {
+    "pattern": "〜を踏まえて",
+    "meaning": "基於〜 / 以〜為依據",
+    "formation": "Noun + を踏まえて",
+    "explanation": "表示以某資訊、事實或結果為基礎來進行判斷或行動，「基於〜而〜」。踏まえる有「踩穩」的意象，引申為「穩固地以〜為依據」。常見於報告、討論、政策制定等正式場合。",
+    "examples": [
+      { "jp": "調査結果を踏まえて、新しい計画を立てます。", "romaji": "Chousa kekka o fumaete, atarashii keikaku o tatemasu.", "zh": "基於調查結果，制定新計畫。" },
+      { "jp": "前回の反省を踏まえて、今回は慎重に進めます。", "romaji": "Zenkai no hansei o fumaete, konkai wa shinchou ni susumemasu.", "zh": "以上次的反省為基礎，這次謹慎地推進。" }
+    ]
+  }
+]

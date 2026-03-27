@@ -1,0 +1,182 @@
+[
+  {
+    "pattern": "〜は〜です",
+    "meaning": "...是...",
+    "formation": "Noun は Noun/Adj + です",
+    "explanation": "表示主題和述語的關係，用於說明某事物「是什麼」。は是主題助詞，です是禮貌語尾。",
+    "examples": [
+      { "jp": "わたしは学生です。", "romaji": "Watashi wa gakusei desu.", "zh": "我是學生。" },
+      { "jp": "これは本です。", "romaji": "Kore wa hon desu.", "zh": "這是書。" }
+    ]
+  },
+  {
+    "pattern": "〜は〜ではありません",
+    "meaning": "...不是...",
+    "formation": "Noun は Noun/Adj + ではありません",
+    "explanation": "です的否定形式，表示「不是」。口語中也常用じゃありません或じゃないです。",
+    "examples": [
+      { "jp": "わたしは先生ではありません。", "romaji": "Watashi wa sensei dewa arimasen.", "zh": "我不是老師。" },
+      { "jp": "これはペンじゃないです。", "romaji": "Kore wa pen ja nai desu.", "zh": "這不是筆。" }
+    ]
+  },
+  {
+    "pattern": "Noun が好きです",
+    "meaning": "喜歡〜",
+    "formation": "Noun が 好き/嫌い/得意/苦手 です",
+    "explanation": "表示喜好。表達「喜歡」用好き，「討厭」用嫌い，「擅長」用得意，「不擅長」用苦手。",
+    "examples": [
+      { "jp": "音楽が好きです。", "romaji": "Ongaku ga suki desu.", "zh": "我喜歡音樂。" },
+      { "jp": "スポーツが得意です。", "romaji": "Supootsu ga tokui desu.", "zh": "我擅長運動。" }
+    ]
+  },
+  {
+    "pattern": "〜があります／います",
+    "meaning": "有〜、存在〜",
+    "formation": "Noun が あります（無生命） / います（有生命）",
+    "explanation": "表示事物的存在。無生命事物（物品、建築物等）用あります，有生命事物（人、動物）用います。",
+    "examples": [
+      { "jp": "テーブルの上に本があります。", "romaji": "Teeburu no ue ni hon ga arimasu.", "zh": "桌上有書。" },
+      { "jp": "公園に子供がいます。", "romaji": "Kouen ni kodomo ga imasu.", "zh": "公園裡有小孩。" }
+    ]
+  },
+  {
+    "pattern": "〜を〜します",
+    "meaning": "做〜（動作）",
+    "formation": "Object を Verb",
+    "explanation": "を是目的語助詞，表示動作的對象。",
+    "examples": [
+      { "jp": "ご飯を食べます。", "romaji": "Gohan o tabemasu.", "zh": "我吃飯。" },
+      { "jp": "日本語を勉強します。", "romaji": "Nihongo o benkyou shimasu.", "zh": "我學日語。" }
+    ]
+  },
+  {
+    "pattern": "〜に行きます／来ます",
+    "meaning": "去〜、來〜",
+    "formation": "Place に 行く / 来る / 帰る",
+    "explanation": "に表示移動的目的地，後面接移動動詞。",
+    "examples": [
+      { "jp": "学校に行きます。", "romaji": "Gakkou ni ikimasu.", "zh": "去學校。" },
+      { "jp": "日本に来ました。", "romaji": "Nihon ni kimashita.", "zh": "來了日本。" }
+    ]
+  },
+  {
+    "pattern": "〜で〜します",
+    "meaning": "在〜做〜 / 用〜做〜",
+    "formation": "Place で Verb / Means で Verb",
+    "explanation": "で表示動作進行的場所，或進行動作的手段、方法。",
+    "examples": [
+      { "jp": "図書館で本を読みます。", "romaji": "Toshokan de hon o yomimasu.", "zh": "在圖書館看書。" },
+      { "jp": "箸でご飯を食べます。", "romaji": "Hashi de gohan o tabemasu.", "zh": "用筷子吃飯。" }
+    ]
+  },
+  {
+    "pattern": "〜の〜",
+    "meaning": "〜的〜（所有／修飾）",
+    "formation": "Noun の Noun",
+    "explanation": "の表示所有關係或修飾關係，類似中文的「的」。",
+    "examples": [
+      { "jp": "田中さんの本です。", "romaji": "Tanaka-san no hon desu.", "zh": "是田中先生的書。" },
+      { "jp": "日本語の先生", "romaji": "Nihongo no sensei", "zh": "日語老師" }
+    ]
+  },
+  {
+    "pattern": "〜も",
+    "meaning": "也〜",
+    "formation": "Noun も ＋ 述語",
+    "explanation": "表示追加，「也」的意思。可以取代が或を使用。",
+    "examples": [
+      { "jp": "私も学生です。", "romaji": "Watashi mo gakusei desu.", "zh": "我也是學生。" },
+      { "jp": "コーヒーも好きです。", "romaji": "Koohii mo suki desu.", "zh": "我也喜歡咖啡。" }
+    ]
+  },
+  {
+    "pattern": "〜から〜まで",
+    "meaning": "從〜到〜",
+    "formation": "Start から End まで",
+    "explanation": "から表示起點（時間或地點），まで表示終點。",
+    "examples": [
+      { "jp": "東京から大阪まで行きます。", "romaji": "Tokyo kara Osaka made ikimasu.", "zh": "從東京去大阪。" },
+      { "jp": "9時から5時まで働きます。", "romaji": "Ku-ji kara go-ji made hatarakimasu.", "zh": "從9點工作到5點。" }
+    ]
+  },
+  {
+    "pattern": "〜たいです",
+    "meaning": "想要做〜",
+    "formation": "Verb-stem + たいです",
+    "explanation": "表示第一人稱的願望。動詞去ます，加たいです。問他人時用たいですか。",
+    "examples": [
+      { "jp": "日本に行きたいです。", "romaji": "Nihon ni ikitai desu.", "zh": "我想去日本。" },
+      { "jp": "何が食べたいですか。", "romaji": "Nani ga tabetai desu ka.", "zh": "你想吃什麼？" }
+    ]
+  },
+  {
+    "pattern": "〜てください",
+    "meaning": "請做〜",
+    "formation": "Verb-te form + ください",
+    "explanation": "禮貌的請求或指示。否定形式是〜ないでください（請不要〜）。",
+    "examples": [
+      { "jp": "ここに名前を書いてください。", "romaji": "Koko ni namae o kaite kudasai.", "zh": "請在這裡寫名字。" },
+      { "jp": "静かにしてください。", "romaji": "Shizuka ni shite kudasai.", "zh": "請保持安靜。" }
+    ]
+  },
+  {
+    "pattern": "〜と〜",
+    "meaning": "〜和〜（並列）",
+    "formation": "Noun と Noun",
+    "explanation": "と連接兩個名詞，表示「和」的關係。也可以表示「和某人一起」。",
+    "examples": [
+      { "jp": "パンと牛乳を買いました。", "romaji": "Pan to gyuunyuu o kaimashita.", "zh": "買了麵包和牛奶。" },
+      { "jp": "友達と映画を見ました。", "romaji": "Tomodachi to eiga o mimashita.", "zh": "和朋友看了電影。" }
+    ]
+  },
+  {
+    "pattern": "〜ませんか",
+    "meaning": "要不要〜？（邀請）",
+    "formation": "Verb-stem + ませんか",
+    "explanation": "用於邀請他人一起做某事的表達方式，比ましょう更有禮貌。",
+    "examples": [
+      { "jp": "一緒に昼ご飯を食べませんか。", "romaji": "Issho ni hirugohan o tabemasen ka.", "zh": "要不要一起吃午飯？" },
+      { "jp": "映画を見に行きませんか。", "romaji": "Eiga o mi ni ikimasen ka.", "zh": "要不要去看電影？" }
+    ]
+  },
+  {
+    "pattern": "〜ましょう",
+    "meaning": "讓我們〜吧",
+    "formation": "Verb-stem + ましょう",
+    "explanation": "表示提議或邀請一起行動。比ませんか更加主動。",
+    "examples": [
+      { "jp": "始めましょう。", "romaji": "Hajimemashou.", "zh": "我們開始吧。" },
+      { "jp": "一緒に勉強しましょう。", "romaji": "Issho ni benkyou shimashou.", "zh": "我們一起學習吧。" }
+    ]
+  },
+  {
+    "pattern": "〜ている（進行／狀態）",
+    "meaning": "正在〜 / 〜的狀態",
+    "formation": "Verb-te form + いる",
+    "explanation": "接在動詞て形後面，表示動作正在進行中（如：食べている＝正在吃），或動作結果的持續狀態（如：結婚している＝已婚狀態）。禮貌形為〜ています。",
+    "examples": [
+      { "jp": "今、ご飯を食べています。", "romaji": "Ima, gohan o tabete imasu.", "zh": "現在正在吃飯。" },
+      { "jp": "彼は東京に住んでいます。", "romaji": "Kare wa Tokyo ni sunde imasu.", "zh": "他住在東京。" }
+    ]
+  },
+  {
+    "pattern": "〜てから（...之後）",
+    "meaning": "做完〜之後",
+    "formation": "Verb-te form + から",
+    "explanation": "表示前一個動作完成後，才進行後一個動作，強調先後順序。與あとで意思相近，但〜てから更強調完成的先後關係。",
+    "examples": [
+      { "jp": "手を洗ってから、ご飯を食べます。", "romaji": "Te o aratte kara, gohan o tabemasu.", "zh": "洗完手之後再吃飯。" },
+      { "jp": "宿題をしてから、テレビを見ます。", "romaji": "Shukudai o shite kara, terebi o mimasu.", "zh": "做完作業之後看電視。" }
+    ]
+  },
+  {
+    "pattern": "〜ないでください（請不要...）",
+    "meaning": "請不要做〜",
+    "formation": "Verb-nai form + でください",
+    "explanation": "禮貌地請求對方不要做某事。是〜てください的否定形式。口語中也可以用〜ないで。",
+    "examples": [
+      { "jp": "ここで写真を撮らないでください。", "romaji": "Koko de shashin o toranai de kudasai.", "zh": "請不要在這裡拍照。" },
+      { "jp": "授業中に話さないでください。", "romaji": "Jugyouchuu ni hanasanai de kudasai.", "zh": "請不要在上課中說話。" }
+    ]
+  }
+]

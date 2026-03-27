@@ -1,0 +1,152 @@
+[
+  {
+    "pattern": "〜てもいいです",
+    "meaning": "可以做〜（許可）",
+    "formation": "Verb-te form + もいいです",
+    "explanation": "表示許可，允許某行為。詢問時用〜てもいいですか。否定形式〜てはいけません表示禁止。",
+    "examples": [
+      { "jp": "ここで写真を撮ってもいいです。", "romaji": "Koko de shashin o totte mo ii desu.", "zh": "可以在這裡拍照。" },
+      { "jp": "トイレに行ってもいいですか。", "romaji": "Toire ni itte mo ii desu ka.", "zh": "可以去廁所嗎？" }
+    ]
+  },
+  {
+    "pattern": "〜てはいけません",
+    "meaning": "不可以做〜（禁止）",
+    "formation": "Verb-te form + はいけません",
+    "explanation": "表示禁止，不允許某行為。口語中也用〜ちゃいけない。比〜てもいいですか的否定更強烈。",
+    "examples": [
+      { "jp": "ここで写真を撮ってはいけません。", "romaji": "Koko de shashin o totte wa ikemasen.", "zh": "不可以在這裡拍照。" },
+      { "jp": "授業中に寝てはいけません。", "romaji": "Jugyouchuu ni nete wa ikemasen.", "zh": "上課中不可以睡覺。" }
+    ]
+  },
+  {
+    "pattern": "〜なければなりません",
+    "meaning": "必須做〜（義務）",
+    "formation": "Verb-nai form（去い）+ なければなりません",
+    "explanation": "表示必要義務，「必須〜」。口語常用〜なきゃいけない或〜なきゃ。",
+    "examples": [
+      { "jp": "明日早く起きなければなりません。", "romaji": "Ashita hayaku okinakereba narimasen.", "zh": "明天必須早起。" },
+      { "jp": "宿題をしなければなりません。", "romaji": "Shukudai o shinakereba narimasen.", "zh": "必須做作業。" }
+    ]
+  },
+  {
+    "pattern": "〜ことができます",
+    "meaning": "能夠做〜（能力）",
+    "formation": "Verb-dict + ことができます",
+    "explanation": "表示能力或可能性，比可能形更正式。否定形式為〜ことができません，表示「無法做〜」。",
+    "examples": [
+      { "jp": "日本語を話すことができます。", "romaji": "Nihongo o hanasu koto ga dekimasu.", "zh": "能夠說日語。" },
+      { "jp": "泳ぐことができません。", "romaji": "Oyogu koto ga dekimasen.", "zh": "不會游泳。" }
+    ]
+  },
+  {
+    "pattern": "〜そうです",
+    "meaning": "看起來〜（樣態）",
+    "formation": "Adj-stem / Verb-stem + そうです",
+    "explanation": "根據視覺外觀作出判斷，表示「看起來〜」。注意特殊變化：いい→よさそう，ない→なさそう。",
+    "examples": [
+      { "jp": "この料理はおいしそうです。", "romaji": "Kono ryouri wa oishisou desu.", "zh": "這道菜看起來很好吃。" },
+      { "jp": "雨が降りそうです。", "romaji": "Ame ga furisou desu.", "zh": "看起來快下雨了。" }
+    ]
+  },
+  {
+    "pattern": "〜と思います",
+    "meaning": "我認為〜",
+    "formation": "Plain form + と思います",
+    "explanation": "表達個人想法或意見，「我認為〜」。否定他人看法時用〜とは思いません。",
+    "examples": [
+      { "jp": "明日は晴れると思います。", "romaji": "Ashita wa hareru to omoimasu.", "zh": "我認為明天會晴天。" },
+      { "jp": "彼は来ないと思います。", "romaji": "Kare wa konai to omoimasu.", "zh": "我認為他不會來。" }
+    ]
+  },
+  {
+    "pattern": "〜ために",
+    "meaning": "為了〜（目的）",
+    "formation": "Verb-dict / Noun の + ために",
+    "explanation": "表示目的，主語明確且主動時使用。與〜ように的區別在於ために後接可控動作，ように後接非意志動詞或状態。",
+    "examples": [
+      { "jp": "日本語を勉強するために、毎日練習します。", "romaji": "Nihongo o benkyou suru tame ni, mainichi renshuu shimasu.", "zh": "為了學日語，每天練習。" },
+      { "jp": "健康のために、運動します。", "romaji": "Kenkou no tame ni, undou shimasu.", "zh": "為了健康，做運動。" }
+    ]
+  },
+  {
+    "pattern": "〜ながら",
+    "meaning": "一邊〜一邊〜",
+    "formation": "Verb-stem + ながら",
+    "explanation": "表示同時進行兩個動作，主要動作在ながら後面。兩個動作的主語必須相同。",
+    "examples": [
+      { "jp": "音楽を聴きながら勉強します。", "romaji": "Ongaku o kikinagara benkyou shimasu.", "zh": "一邊聽音樂一邊讀書。" },
+      { "jp": "歩きながら話しましょう。", "romaji": "Arukinagara hanashimashou.", "zh": "我們邊走邊談吧。" }
+    ]
+  },
+  {
+    "pattern": "〜てしまいます",
+    "meaning": "（不小心）做了〜 / 完成了〜",
+    "formation": "Verb-te form + しまいます",
+    "explanation": "表示完了，或帶有遺憾、後悔的語氣，有時指不希望發生的事情已完成。口語縮約形為〜ちゃいます／〜ちゃった。",
+    "examples": [
+      { "jp": "財布を忘れてしまいました。", "romaji": "Saifu o wasurete shimaimashita.", "zh": "不小心把錢包忘了。" },
+      { "jp": "全部食べてしまいました。", "romaji": "Zenbu tabete shimaimashita.", "zh": "全部都吃完了。" }
+    ]
+  },
+  {
+    "pattern": "〜ておきます",
+    "meaning": "事先做〜（預先準備）",
+    "formation": "Verb-te form + おきます",
+    "explanation": "表示事先準備好，為之後的事預做安排。口語縮約形為〜とく。",
+    "examples": [
+      { "jp": "旅行の前に地図を調べておきます。", "romaji": "Ryokou no mae ni chizu o shirabete okimasu.", "zh": "旅行前先查好地圖。" },
+      { "jp": "宿題をやっておいてください。", "romaji": "Shukudai o yatte oite kudasai.", "zh": "請先把作業做好。" }
+    ]
+  },
+  {
+    "pattern": "〜てもらいます",
+    "meaning": "請（某人）幫我做〜",
+    "formation": "Person に Verb-te form + もらいます",
+    "explanation": "請求他人做某事，說話者是受惠者。強調說話者「得到」了對方行動的恩惠。",
+    "examples": [
+      { "jp": "友達に手伝ってもらいました。", "romaji": "Tomodachi ni tetsudatte moraimashita.", "zh": "請朋友幫了我的忙。" },
+      { "jp": "先生に説明してもらいました。", "romaji": "Sensei ni setsumei shite moraimashita.", "zh": "請老師幫我說明了。" }
+    ]
+  },
+  {
+    "pattern": "〜でしょう",
+    "meaning": "應該是〜吧（推測）",
+    "formation": "Plain form + でしょう",
+    "explanation": "表示推測或確認，比と思います更有把握。語調上揚時帶有確認的語氣，語調下降則為推測。",
+    "examples": [
+      { "jp": "彼女は来るでしょう。", "romaji": "Kanojo wa kuru deshou.", "zh": "她應該會來吧。" },
+      { "jp": "明日は寒いでしょう。", "romaji": "Ashita wa samui deshou.", "zh": "明天應該很冷吧。" }
+    ]
+  },
+  {
+    "pattern": "〜てみる",
+    "meaning": "試著做〜、嘗試〜",
+    "formation": "Verb-te form + みる",
+    "explanation": "表示嘗試做某件事，帶有「試試看」的語感。禮貌形為〜てみます，表達不確定結果但願意嘗試的態度。",
+    "examples": [
+      { "jp": "この料理を食べてみてください。", "romaji": "Kono ryouri o tabete mite kudasai.", "zh": "請試吃看看這道菜。" },
+      { "jp": "新しいカフェに行ってみました。", "romaji": "Atarashii kafe ni itte mimashita.", "zh": "試著去了新的咖啡廳。" }
+    ]
+  },
+  {
+    "pattern": "〜てあげる／もらう／くれる",
+    "meaning": "（為某人）做〜 / 得到〜 / （對方）為我做〜",
+    "formation": "Verb-te form + あげる / もらう / くれる",
+    "explanation": "授受動詞的て形用法。あげる表示「給予」（我為別人做）；もらう表示「接受」（我請別人做）；くれる表示「給我」（別人為我做），方向不同，不可混用。",
+    "examples": [
+      { "jp": "友達に本を貸してあげました。", "romaji": "Tomodachi ni hon o kashite agemashita.", "zh": "把書借給了朋友。" },
+      { "jp": "母が料理を作ってくれました。", "romaji": "Haha ga ryouri o tsukutte kuremashita.", "zh": "媽媽為我做了料理。" }
+    ]
+  },
+  {
+    "pattern": "〜ようになる",
+    "meaning": "變得能夠〜 / 漸漸〜",
+    "formation": "Verb-dict / Verb-nai + ようになる",
+    "explanation": "表示能力或習慣的改變，「從不會到會」或「從不做到做」。強調變化的過程，常用於描述學習成果或行為習慣的改變。",
+    "examples": [
+      { "jp": "練習して、泳げるようになりました。", "romaji": "Renshuu shite, oyogeru you ni narimashita.", "zh": "經過練習，變得會游泳了。" },
+      { "jp": "毎日野菜を食べるようになりました。", "romaji": "Mainichi yasai o taberu you ni narimashita.", "zh": "變得每天都吃蔬菜了。" }
+    ]
+  }
+]
