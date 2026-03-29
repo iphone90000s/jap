@@ -18,6 +18,7 @@ async function loadData() {
     ['grammar_N3',    'data/grammar_N3.json'],
     ['grammar_N2',    'data/grammar_N2.json'],
     ['grammar_N1',    'data/grammar_N1.json'],
+    ['readings',      'data/readings.json'],
   ];
   const results = await Promise.all(files.map(([, path]) => fetch(path).then(r => r.json())));
   const map = Object.fromEntries(files.map(([key], i) => [key, results[i]]));
@@ -25,6 +26,7 @@ async function loadData() {
   DATA.katakana = map.katakana;
   DATA.vocabulary = { N5: map.vocab_N5, N4: map.vocab_N4, N3: map.vocab_N3, N2: map.vocab_N2, N1: map.vocab_N1 };
   DATA.grammar    = { N5: map.grammar_N5, N4: map.grammar_N4, N3: map.grammar_N3, N2: map.grammar_N2, N1: map.grammar_N1 };
+  DATA.readings   = map.readings;
 }
 
 // =========================================================
@@ -88,10 +90,14 @@ const Modal = {
 const Router = {
   pages: {},
   current: null,
+  cleanupFns: [],
   register(name, fn) { this.pages[name] = fn; },
+  onLeave(fn) { this.cleanupFns.push(fn); },
   go(page) {
     const fn = this.pages[page];
     if (!fn) return;
+    this.cleanupFns.forEach(f => f());
+    this.cleanupFns = [];
     this.current = page;
     $$('.nav-link').forEach(a => a.classList.toggle('active', a.dataset.page === page));
     $('#main').innerHTML = '';
@@ -215,6 +221,16 @@ Router.register('home', function(main) {
         </div>
       </div>
 
+      <div class="card chart-card" style="margin-top:24px;">
+        <h3 style="margin-bottom:16px;">📈 近14天測驗成績</h3>
+        ${renderProgressChart(history)}
+        <div class="chart-legend">
+          <span><span class="chart-legend-dot" style="background:#38a169;"></span>優秀 (≥80%)</span>
+          <span><span class="chart-legend-dot" style="background:#d69e2e;"></span>良好 (50-79%)</span>
+          <span><span class="chart-legend-dot" style="background:#e53e3e;"></span>加油 (<50%)</span>
+        </div>
+      </div>
+
       <div class="card" style="margin-top:24px;">
         <h3 style="margin-bottom:16px;">🗺️ 學習地圖</h3>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
@@ -222,7 +238,8 @@ Router.register('home', function(main) {
             { icon:'あ', title:'50音表', sub:'平假名・片假名', href:'#kana', color:'#c0392b' },
             { icon:'📖', title:'單字學習', sub:'N5-N1 分級詞彙', href:'#vocabulary', color:'#3182ce' },
             { icon:'📝', title:'文法教學', sub:'詳細說明+例句', href:'#grammar', color:'#805ad5' },
-            { icon:'🎯', title:'每日測驗', sub:'混合題型練習', href:'#quiz', color:'#38a169' }
+            { icon:'🎯', title:'每日測驗', sub:'混合題型練習', href:'#quiz', color:'#38a169' },
+            { icon:'📚', title:'閱讀練習', sub:'短文閱讀+理解測驗', href:'#reading', color:'#dd6b20' }
           ].map(m => `
           <a href="${m.href}" style="display:flex;align-items:center;gap:12px;padding:16px;background:var(--bg);border-radius:10px;border:2px solid var(--border);transition:all 0.2s;text-decoration:none;color:inherit;" onmouseover="this.style.borderColor='${m.color}';this.style.background='#fff'" onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--bg)'">
             <span style="font-size:28px;">${m.icon}</span>
@@ -237,6 +254,31 @@ Router.register('home', function(main) {
   const homeGrid = main.querySelector('.home-grid');
   if (window.innerWidth < 768) homeGrid.style.gridTemplateColumns = '1fr';
 });
+
+function renderProgressChart(history) {
+  const days = [];
+  for (let i = 13; i >= 0; i--) {
+    const d = new Date(Date.now() - i * 86400000).toISOString().slice(0, 10);
+    const scores = history.filter(h => h.date === d).map(h => h.score);
+    const avg = scores.length ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : null;
+    days.push({ date: d.slice(5), score: avg });
+  }
+  const bars = days.map(d => {
+    if (d.score === null) {
+      return `<div class="chart-bar-wrap">
+        <div class="chart-bar" style="height:4px;background:var(--border);"></div>
+        <span class="chart-label">${d.date}</span>
+      </div>`;
+    }
+    const h = Math.max(6, Math.round(68 * d.score / 100));
+    const color = d.score >= 80 ? '#38a169' : d.score >= 50 ? '#d69e2e' : '#e53e3e';
+    return `<div class="chart-bar-wrap" title="${d.date}: ${d.score}%">
+      <div class="chart-bar" style="height:${h}px;background:${color};" title="${d.score}%"></div>
+      <span class="chart-label">${d.date}</span>
+    </div>`;
+  }).join('');
+  return `<div class="chart-bars">${bars}</div>`;
+}
 
 // =========================================================
 // Page: KANA (50音)
@@ -493,7 +535,44 @@ Router.register('vocabulary', function(main) {
         Store.update('learned', obj => ({ ...obj, [key]: !obj[key] }), {});
         renderContent();
       });
+
+      card.addEventListener('click', () => openVocabModal(w));
     });
+  }
+
+  function openVocabModal(w) {
+    const conj = Conjugate.get(w.word, w.reading, w.type);
+    const conjHtml = conj ? `
+      <hr style="margin:16px 0;border-color:var(--border);">
+      <div style="font-size:12px;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;">
+        活用表 · ${conj.label}
+      </div>
+      <table class="conj-table">
+        <thead><tr><th>形式</th><th>活用形</th></tr></thead>
+        <tbody>
+          ${Object.entries(conj.forms).map(([k,v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join('')}
+        </tbody>
+      </table>` : '';
+
+    Modal.show(`
+      <div class="conj-modal" style="padding:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+          <div>
+            <div style="font-size:36px;font-weight:700;">${w.word}</div>
+            <div style="font-size:18px;color:var(--text-light);">${w.reading}</div>
+          </div>
+          ${badge(w.level)}
+        </div>
+        <div style="font-size:20px;font-weight:600;margin-bottom:4px;">${w.meaning}</div>
+        <div style="font-size:14px;color:#a0aec0;font-style:italic;margin-bottom:8px;">${w.romaji || ''}</div>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <span style="font-size:12px;background:var(--bg);padding:4px 10px;border-radius:20px;color:var(--text-light);">${w.type || ''}</span>
+          <button class="speak-btn" id="modal-speak">🔊 發音</button>
+        </div>
+        ${conjHtml}
+      </div>
+    `);
+    $('#modal-speak').addEventListener('click', () => speak(w.word));
   }
 
   function renderFlashcard(container, words, learned) {
@@ -651,6 +730,78 @@ Router.register('grammar', function(main) {
 });
 
 // =========================================================
+// Conjugation Engine (動詞・形容詞活用)
+// =========================================================
+const Conjugate = {
+  getVerbType(reading) {
+    if (reading === 'くる' || reading === '来る') return 'kuru';
+    if (reading === 'する' || reading.endsWith('する')) return 'suru';
+    if (!reading.endsWith('る')) return 'godan';
+    const stem = reading.slice(0, -1);
+    const last = stem.slice(-1);
+    return 'いきしちにひみりえけせてねへめれぎじびぴ'.includes(last) ? 'ichidan' : 'godan';
+  },
+  godan(reading) {
+    const stem = reading.slice(0, -1);
+    const end = reading.slice(-1);
+    const m = {
+      'う': ['い','わ','って','った','える','われる','わせる'],
+      'く': ['き','か','いて','いた','ける','かれる','かせる'],
+      'ぐ': ['ぎ','が','いで','いだ','げる','がれる','がせる'],
+      'す': ['し','さ','して','した','せる','される','させる'],
+      'つ': ['ち','た','って','った','てる','たれる','たせる'],
+      'ぬ': ['に','な','んで','んだ','ねる','なれる','なせる'],
+      'ぶ': ['び','ば','んで','んだ','べる','ばれる','ばせる'],
+      'む': ['み','ま','んで','んだ','める','まれる','ませる'],
+      'る': ['り','ら','って','った','れる','られる','らせる'],
+    }[end];
+    if (!m) return null;
+    return { '辞書形': reading, 'ます形': stem+m[0]+'ます', 'て形': stem+m[2],
+      'た形': stem+m[3], 'ない形': stem+m[1]+'ない',
+      '可能形': stem+m[4], '被動形': stem+m[5], '使役形': stem+m[6] };
+  },
+  ichidan(reading) {
+    const s = reading.slice(0, -1);
+    return { '辞書形': reading, 'ます形': s+'ます', 'て形': s+'て',
+      'た形': s+'た', 'ない形': s+'ない',
+      '可能形': s+'られる', '被動形': s+'られる', '使役形': s+'させる' };
+  },
+  kuru() {
+    return { '辞書形': 'くる', 'ます形': 'きます', 'て形': 'きて',
+      'た形': 'きた', 'ない形': 'こない',
+      '可能形': 'こられる', '被動形': 'こられる', '使役形': 'こさせる' };
+  },
+  suru(reading) {
+    const p = reading === 'する' ? '' : reading.slice(0, -2);
+    return { '辞書形': reading, 'ます形': p+'します', 'て形': p+'して',
+      'た形': p+'した', 'ない形': p+'しない',
+      '可能形': p+'できる', '被動形': p+'される', '使役形': p+'させる' };
+  },
+  iAdj(word, reading) {
+    const s = reading.endsWith('い') ? reading.slice(0, -1) : reading;
+    return { '辞書形（普通）': word, '辞書形（丁寧）': word+'です',
+      '否定形': s+'くない', '過去形': s+'かった', '過去否定': s+'くなかった',
+      '副詞形': s+'く', '名詞化': s+'さ' };
+  },
+  naAdj(word) {
+    return { '辞書形（普通）': word+'だ', '辞書形（丁寧）': word+'です',
+      '否定形': word+'ではない', '過去形': word+'でした', '過去否定': word+'ではなかった',
+      '副詞形': word+'に', '名詞化': word+'さ' };
+  },
+  get(word, reading, type) {
+    if (type === '動詞') {
+      const vt = this.getVerbType(reading);
+      if (vt === 'kuru') return { label: 'カ変動詞', forms: this.kuru() };
+      if (vt === 'suru') return { label: 'サ変動詞', forms: this.suru(reading) };
+      if (vt === 'ichidan') return { label: '一段動詞（る動詞）', forms: this.ichidan(reading) };
+      return { label: '五段動詞（う動詞）', forms: this.godan(reading) };
+    }
+    if (type === '形容詞') return { label: 'い形容詞', forms: this.iAdj(word, reading) };
+    if (type === '形容動詞') return { label: 'な形容詞', forms: this.naAdj(word) };
+    return null;
+  }
+};
+
 // =========================================================
 // SRS (間隔重複) helpers — simplified SM-2
 // =========================================================
@@ -723,6 +874,25 @@ Router.register('quiz', function(main) {
       qText: w.word, qHint: w.reading + '（' + (w.level || level) + (tag ? ' · ' + tag : '') + '）',
       answer: w.meaning, options: shuffle([w.meaning, ...dis]) };
   }
+  function makeGrammarQ(g, level, allGrammar) {
+    const dis = shuffle(allGrammar.filter(x => x.meaning !== g.meaning)).slice(0, 3).map(x => x.meaning);
+    if (dis.length < 3) return null;
+    return { type: 'grammar',
+      qText: g.pattern, qHint: '這個文法的意思是？（' + level + '）',
+      answer: g.meaning, options: shuffle([g.meaning, ...dis]) };
+  }
+
+  function makeGrammarExQ(g, level, allGrammar) {
+    // Show example sentence with blank, guess pattern
+    if (!g.examples || !g.examples[0]) return null;
+    const ex = g.examples[0];
+    const dis = shuffle(allGrammar.filter(x => x.pattern !== g.pattern)).slice(0, 3).map(x => x.pattern);
+    if (dis.length < 3) return null;
+    return { type: 'grammar_ex',
+      qText: ex.jp, qHint: '這個句子使用了哪個文法？（' + level + '）',
+      answer: g.pattern, options: shuffle([g.pattern, ...dis]) };
+  }
+
   function makeVocabRevQ(w, level, allVocab) {
     const wObj = { ...w, level };
     const wordKey = level + '_' + w.word;
@@ -749,8 +919,17 @@ Router.register('quiz', function(main) {
         pool.push({ type: 'kana', speakText: h.char, qText: h.char, qHint: '這個片假名的讀音是？', answer: h.romaji, options: shuffle([h.romaji, ...dis]) });
       });
     }
-    shuffle(vocabPool).slice(0, 7).forEach(w => pool.push(makeVocabQ(w, level, allVocab)));
-    shuffle(vocabPool).slice(0, 5).forEach(w => pool.push(makeVocabRevQ(w, level, allVocab)));
+    shuffle(vocabPool).slice(0, 6).forEach(w => pool.push(makeVocabQ(w, level, allVocab)));
+    shuffle(vocabPool).slice(0, 4).forEach(w => pool.push(makeVocabRevQ(w, level, allVocab)));
+
+    // Grammar questions (2 per quiz)
+    const allGrammar = Object.values(DATA.grammar).flat();
+    const grammarPool = (DATA.grammar[level] || []).length >= 4 ? DATA.grammar[level] : allGrammar;
+    shuffle(grammarPool).slice(0, 2).forEach(g => {
+      const q = Math.random() > 0.5 ? makeGrammarQ(g, level, allGrammar) : makeGrammarExQ(g, level, allGrammar);
+      if (q) pool.push(q);
+    });
+
     return shuffle(pool).slice(0, 10);
   }
 
@@ -958,7 +1137,7 @@ Router.register('quiz', function(main) {
           </div>
           <div class="quiz-question">
             <div class="quiz-type-label">
-              ${q.type === 'kana' ? '假名讀音' : q.type === 'vocab_rev' ? '中文→日文' : '日文→中文'}
+              ${q.type === 'kana' ? '假名讀音' : q.type === 'vocab_rev' ? '中文→日文' : q.type === 'grammar' ? '📝 文法意思' : q.type === 'grammar_ex' ? '📝 文法應用' : '日文→中文'}
               ${q.speakText ? `<button class="speak-btn" id="quiz-speak">🔊</button>` : ''}
             </div>
             <div class="quiz-q-text">${q.qText}</div>
@@ -1090,6 +1269,170 @@ Router.register('quiz', function(main) {
 });
 
 // =========================================================
+// Page: READING
+// =========================================================
+Router.register('reading', function(main) {
+  let filterLevel = 'all';
+  let activePassage = null;
+  let popup = null;
+
+  function render() {
+    const items = filterLevel === 'all'
+      ? DATA.readings
+      : DATA.readings.filter(r => r.level === filterLevel);
+
+    main.innerHTML = `
+      <div class="page-hero">
+        <h1>📚 閱讀練習</h1>
+        <p>短文閱讀・點擊紅字查看單字・測試理解程度</p>
+      </div>
+      <div class="container section">
+        <div class="level-filter">
+          ${['all','N5','N4','N3','N2','N1'].map(lv =>
+            `<button class="filter-btn ${filterLevel===lv?'active':''}" data-level="${lv}">
+              ${lv==='all'?'全部':lv}
+            </button>`
+          ).join('')}
+        </div>
+        <div class="card-grid" id="reading-list">
+          ${items.map(r => `
+            <div class="reading-card" data-id="${r.id}">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                ${badge(r.level)}
+                <span style="font-size:12px;color:var(--text-light);">${r.vocab.length} 個詞彙</span>
+              </div>
+              <h3>${r.title}</h3>
+              <div class="rc-sub">${r.titleZh}</div>
+              <div class="rc-sub" style="margin-top:8px;">${r.questions.length} 道理解題 →</div>
+            </div>
+          `).join('')}
+          ${items.length === 0 ? `<div class="empty-state"><div class="empty-icon">📚</div><p>這個程度暫無閱讀材料</p></div>` : ''}
+        </div>
+      </div>
+    `;
+
+    $$('.filter-btn').forEach(btn => btn.addEventListener('click', () => {
+      filterLevel = btn.dataset.level;
+      render();
+    }));
+    $$('.reading-card').forEach(card => card.addEventListener('click', () => {
+      activePassage = DATA.readings.find(r => r.id === card.dataset.id);
+      if (activePassage) renderPassage();
+    }));
+  }
+
+  function renderPassage() {
+    const r = activePassage;
+    const vocabMap = {};
+    r.vocab.forEach(v => { vocabMap[v.word] = v; });
+
+    // Build annotated text: replace vocab words with clickable spans
+    let annotated = r.text;
+    // Sort vocab by length desc to avoid partial matches
+    const sortedVocab = [...r.vocab].sort((a, b) => b.word.length - a.word.length);
+    sortedVocab.forEach(v => {
+      annotated = annotated.split(v.word).join(
+        `<span class="reading-word" data-word="${v.word}">${v.word}</span>`
+      );
+    });
+
+    main.innerHTML = `
+      <div class="page-hero" style="padding:24px;">
+        <h1>📚 ${r.title}</h1>
+        <p>${r.titleZh} · ${badge(r.level)}</p>
+      </div>
+      <div class="container section">
+        <div class="reading-back" id="back-list">← 返回列表</div>
+        <div class="reading-passage">
+          <div class="reading-text">${annotated}</div>
+        </div>
+        <div class="reading-q-area">
+          <h3>📝 理解測驗</h3>
+          ${r.questions.map((q, qi) => `
+            <div class="reading-q" id="rq-${qi}">
+              <div class="q-text">${qi+1}. ${q.q}</div>
+              <div class="q-opts">
+                ${q.options.map(opt => `
+                  <button class="q-opt" data-qi="${qi}" data-opt="${opt}" data-ans="${q.answer}">${opt}</button>
+                `).join('')}
+              </div>
+            </div>
+          `).join('')}
+          <div id="reading-score-area"></div>
+        </div>
+      </div>
+    `;
+
+    // Popup for vocab - clean up on page leave
+    document.addEventListener('mousemove', onMouseMove);
+    Router.onLeave(() => {
+      document.removeEventListener('mousemove', onMouseMove);
+      if (popup) { popup.remove(); popup = null; }
+    });
+
+    $$('.reading-word').forEach(span => {
+      span.addEventListener('mouseenter', (e) => {
+        const v = vocabMap[span.dataset.word];
+        if (!v) return;
+        if (!popup) { popup = el('div', 'vocab-popup'); document.body.appendChild(popup); }
+        popup.innerHTML = `<div class="vp-word">${v.word}</div><div class="vp-reading">${v.reading}</div><div class="vp-meaning">${v.meaning}</div>`;
+        popup.style.display = 'block';
+      });
+      span.addEventListener('mouseleave', () => {
+        if (popup) popup.style.display = 'none';
+      });
+      span.addEventListener('click', () => speak(span.dataset.word));
+    });
+
+    let answered = 0;
+    let correct = 0;
+    $$('.q-opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const qi = btn.dataset.qi;
+        const qDiv = $(`#rq-${qi}`);
+        const already = qDiv.querySelector('.correct, .wrong');
+        if (already) return;
+        const isCorrect = btn.dataset.opt === btn.dataset.ans;
+        if (isCorrect) { btn.classList.add('correct'); correct++; }
+        else {
+          btn.classList.add('wrong');
+          qDiv.querySelectorAll('.q-opt').forEach(b => {
+            if (b.dataset.opt === btn.dataset.ans) b.classList.add('correct');
+          });
+        }
+        qDiv.querySelectorAll('.q-opt').forEach(b => b.disabled = true);
+        answered++;
+        if (answered === r.questions.length) {
+          const pct = Math.round(correct / r.questions.length * 100);
+          const msg = pct === 100 ? '完美！全部答對！🏆' : pct >= 67 ? '很好！繼續加油！🌟' : '多多閱讀，慢慢進步！📚';
+          $('#reading-score-area').innerHTML = `
+            <div class="reading-score">
+              <div class="rs-num">${pct}%</div>
+              <div>${correct} / ${r.questions.length} 題正確</div>
+              <div style="color:var(--text-light);margin-top:4px;">${msg}</div>
+            </div>`;
+        }
+      });
+    });
+
+    $('#back-list').addEventListener('click', () => {
+      document.removeEventListener('mousemove', onMouseMove);
+      if (popup) { popup.remove(); popup = null; }
+      render();
+    });
+  }
+
+  function onMouseMove(e) {
+    if (popup && popup.style.display !== 'none') {
+      popup.style.left = (e.clientX + 14) + 'px';
+      popup.style.top  = (e.clientY + 14) + 'px';
+    }
+  }
+
+  render();
+});
+
+// =========================================================
 // Init
 // =========================================================
 document.addEventListener('DOMContentLoaded', async () => {
@@ -1101,6 +1444,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     </div>`;
 
   await loadData();
+
+  // Dark mode
+  const darkToggle = $('#dark-toggle');
+  if (Store.get('dark_mode', false)) document.body.classList.add('dark');
+  function updateDarkToggle() {
+    darkToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+  }
+  updateDarkToggle();
+  darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    Store.set('dark_mode', document.body.classList.contains('dark'));
+    updateDarkToggle();
+  });
 
   // Navbar links
   $$('.nav-link').forEach(a => {
